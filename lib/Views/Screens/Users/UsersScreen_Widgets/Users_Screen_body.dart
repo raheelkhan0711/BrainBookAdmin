@@ -7,7 +7,6 @@ import 'package:brain_book_admin/Views/Screens/Users/UsersScreen_Widgets/admin_p
 import 'package:brain_book_admin/Views/Screens/Users/users_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-
 import 'app_users.dart';
 
 class UsersScreenBody extends GetView<UserScreenController> {
