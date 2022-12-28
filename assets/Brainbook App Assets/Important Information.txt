@@ -1,0 +1,11 @@
+Font name: Poppins
+
+Light Blue background: 6fa8dc, Opacity: 15%
+
+Dark blue gradient: 6fa8dc --> 3e72a2 --> 073763
+
+Light blue font color: 6fa8dc
+
+Dark blue font color: 3e72a2
+
+Golden Gradient: ffd966 --> c09d34 --> 7f6000
