@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 
 class SubCatagorySubTabPutProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _editSubCatagorySubTabEndPoint = "api/v1/admin/subTab";
   Future editSubCatagorySubTab(
     String title,

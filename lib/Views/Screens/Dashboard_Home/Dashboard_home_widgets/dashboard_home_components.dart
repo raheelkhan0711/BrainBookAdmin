@@ -18,7 +18,6 @@ class DashboardHomeComponents extends GetView<DashBoardController> {
             scrollDirection: Axis.horizontal,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Obx(() => DashboardHomeItemList(
                     title1: controller.pendingdResult1.count.toString(),
@@ -61,7 +60,6 @@ class DashboardHomeComponents extends GetView<DashBoardController> {
   }
 }
 
-// ignore: camel_case_types
 class DashboardHomeText extends StatefulWidget {
   const DashboardHomeText({
     Key? key,
@@ -85,8 +83,6 @@ class _Dashboard_textState extends State<DashboardHomeText> {
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-
-          // ignore: prefer_const_literals_to_create_immutables
           children: [
             Text(
               widget.title1,

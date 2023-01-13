@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, unnecessary_brace_in_string_interps
+// ignore_for_file: file_names, unnecessary_brace_in_string_interps, camel_case_types
 
 import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Views/OverAll-App-Widgets/AppColor/colors.dart';
@@ -69,7 +69,7 @@ class TranslatorPhraseSentences
                       width: 350,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 140),
+                      padding: EdgeInsets.only(right: 120),
                       child: Text(
                         'Action',
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -132,26 +132,41 @@ class TranslatorPhraseSentences
                           const SizedBox(
                             width: 280,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 0),
-                            child: SizedBox(
-                              width: 140,
-                              child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      backgroundColor:
-                                          bottomImageSelectedColor),
-                                  onPressed: () {
-                                    Get.find<GlobalController>()
-                                        .EditPhraseDailogBox(
-                                            'Edit Phrase', '', 'Update');
-                                  },
-                                  child: const Text('Action')),
-                            ),
+                          phrase_Components(
+                            phraseId: controller
+                                .phraseResultList[index].phraseId
+                                .toString(),
                           )
                         ],
                       ),
                     );
                   })
             ]))));
+  }
+}
+
+class phrase_Components extends StatelessWidget {
+  const phrase_Components({
+    Key? key,
+    required this.phraseId,
+  }) : super(key: key);
+  final String phraseId;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 0),
+      child: SizedBox(
+        width: 140,
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: bottomImageSelectedColor),
+            onPressed: () {
+              Get.find<GlobalController>()
+                  .EditPhraseDailogBox('Edit Phrase', phraseId, 'Update');
+            },
+            child: const Text('Action')),
+      ),
+    );
   }
 }

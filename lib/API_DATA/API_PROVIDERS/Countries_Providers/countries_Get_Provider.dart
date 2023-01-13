@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class CountriesGetProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _getCountriesEndPoint = "api/v1/admin/country";
   Future<List<dynamic>> fetchCountries() async {
     try {

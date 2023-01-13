@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 
 class TranslatorPutProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _editTranslatorEndPoint = "api/v1/admin/language";
   Future editLanguage(
     String name,

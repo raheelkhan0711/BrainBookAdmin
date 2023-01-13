@@ -5,7 +5,7 @@ import 'package:get/route_manager.dart';
 
 class StatesPostProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _postStateEndpoint = "api/v1/admin/createState";
 
   Future addNewState(String state, String countryId) async {

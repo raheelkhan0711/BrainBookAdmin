@@ -5,7 +5,7 @@ import 'package:get/route_manager.dart';
 
 class SubscriptionPostProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _postSubscriptionEndpoint = "api/v1/admin/package";
 
   Future addSubscriptionData(

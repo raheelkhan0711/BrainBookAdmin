@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names, sized_box_for_whitespace, file_names, prefer_final_fields, unused_field
 import 'package:brain_book_admin/API_DATA/API_MODELS/Login_Model/Login_Model.dart';
+import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Users%20Providers/Admin_UsersDetails_Get_Provider.dart';
 import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Catagory_Screen/Catagory_Screen_controller.dart';
@@ -33,6 +34,8 @@ class GlobalController extends GetxController {
       TranslatorScreenController();
   TranslatorPhraseScreenController _translatorPhraseScreenController =
       TranslatorPhraseScreenController('');
+  AdminUsersDetailsGetProvider _adminUsersDetailsGetProvider =
+      AdminUsersDetailsGetProvider();
 
 //......... Country DailogBox Method......//
   Future<dynamic> CountryDailogBox(
@@ -51,7 +54,6 @@ class GlobalController extends GetxController {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  //  Text(title),
                   SizedBox(
                     width: 250,
                     child: TextFormField(
@@ -947,7 +949,8 @@ class GlobalController extends GetxController {
   }
 
 //......... admin panel Users DailogBox Method......//
-  Future<dynamic> AdminUsersDetailsDailogBox(String title, buttontext) {
+  Future<dynamic> AdminUsersDetailsDailogBox(
+      String title, String adminUserId, buttontext) {
     return Get.defaultDialog(
         titlePadding: EdgeInsets.only(top: 30),
         radius: 10,
@@ -1069,6 +1072,8 @@ class GlobalController extends GetxController {
                                 child: ButtonWidget(
                                     title: buttontext,
                                     onTap: () {
+                                      _adminUsersDetailsGetProvider
+                                          .fetchAdminUsersDetails(adminUserId);
                                       Navigator.pop(Get.context!);
                                     }),
                               )
@@ -1509,7 +1514,7 @@ class GlobalController extends GetxController {
                       keyboardType: TextInputType.text,
                       maxLines: 1,
                       decoration: InputDecoration(
-                        hintText: 'French',
+                        hintText: 'Target Language',
                         hintMaxLines: 1,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),

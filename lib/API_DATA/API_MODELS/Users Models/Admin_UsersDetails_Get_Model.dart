@@ -6,15 +6,16 @@ class AdminUserDetailsGetModel {
   String? email;
   int? phone;
   String? userState;
-  String? role;
+  // String? role;
 
-  AdminUserDetailsGetModel(
-      {this.adminUserId,
-      this.name,
-      this.email,
-      this.phone,
-      this.userState,
-      this.role});
+  AdminUserDetailsGetModel({
+    this.adminUserId,
+    this.name,
+    this.email,
+    this.phone,
+    this.userState,
+    // this.role
+  });
 
   AdminUserDetailsGetModel.fromJson(Map<String, dynamic> json) {
     adminUserId = json['_id'];
@@ -22,7 +23,7 @@ class AdminUserDetailsGetModel {
     email = json['email'];
     phone = json['phone'];
     userState = json['userState'];
-    role = json['role'];
+    // role = json['role'];
   }
 
   Map<String, dynamic> toJson() {
@@ -32,7 +33,7 @@ class AdminUserDetailsGetModel {
     data['email'] = email;
     data['phone'] = phone;
     data['userState'] = userState;
-    data['role'] = role;
+    // data['role'] = role;
     return data;
   }
 }

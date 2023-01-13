@@ -6,7 +6,7 @@ import 'package:get/route_manager.dart';
 
 class CatagoryGetProvider {
   final _dio = Dio();
-  final _baseurl = "http://3.12.213.89:8080/";
+  final _baseurl = "http://13.251.135.112:8080/";
   final _getCatagoryEndPoint = "api/v1/admin/category?townCityId=";
 
   Future<List<dynamic>> fetchCatagory(String townCityId) async {

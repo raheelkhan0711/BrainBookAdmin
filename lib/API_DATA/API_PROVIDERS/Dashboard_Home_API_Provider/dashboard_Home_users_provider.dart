@@ -6,7 +6,7 @@ import 'package:get/route_manager.dart';
 
 class DashboardHomeUsersProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _dashboardUsersEndpoint = "api/v1/admin/all-users";
 
   Future<dynamic> totalUsers() async {

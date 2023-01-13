@@ -13,7 +13,6 @@ class UsersScreenBody extends GetView<UserScreenController> {
   const UsersScreenBody({
     Key? key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -95,7 +94,11 @@ class UsersScreenBody extends GetView<UserScreenController> {
                             const SizedBox(
                               height: 50,
                             ),
-                            const AdminPanelUser(),
+                            const AdminPanelUser(adminUserId: ''
+                                //  controller
+                                //     .adminUserResultList[index].adminUserId
+                                //     .toString(),
+                                ),
                             const SizedBox(
                               height: 50,
                             ),

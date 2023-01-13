@@ -5,6 +5,5 @@ class TranslatorScreenBinding implements Bindings {
   @override
   void dependencies() {
     Get.put(TranslatorScreenController());
-    // Get.lazyPut(() => TranslatorScreenController());
   }
 }

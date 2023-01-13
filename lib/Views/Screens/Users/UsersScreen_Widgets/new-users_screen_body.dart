@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 
 class NewUsersScreenBody extends GetView<UserScreenController> {
   const NewUsersScreenBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,27 +130,6 @@ class NewUsersScreenBody extends GetView<UserScreenController> {
                                   const SizedBox(
                                     width: 25,
                                   ),
-                                  // Expanded(
-                                  //   child: SizedBox(
-                                  //     height: 45,
-                                  //     child: TextFormField(
-                                  //       controller: controller
-                                  //           .adminUserEmailPostController,
-                                  //       keyboardType: TextInputType.text,
-                                  //       maxLines: 1,
-                                  //       decoration: InputDecoration(
-                                  //         hintText: 'password',
-                                  //         hintMaxLines: 1,
-                                  //         border: OutlineInputBorder(
-                                  //           borderRadius:
-                                  //               BorderRadius.circular(10),
-                                  //           borderSide:
-                                  //               const BorderSide(width: 4.0),
-                                  //         ),
-                                  //       ),
-                                  //     ),
-                                  //   ),
-                                  // ),
                                 ],
                               ),
                             ),
@@ -538,7 +516,6 @@ class NewUsersScreenBody extends GetView<UserScreenController> {
                                       //checkColor: bottomImageSelectedColor,
                                       title: const Text(""),
                                       value: true,
-                                      // selectedTileColor: bottomImageSelectedColor,
                                       controlAffinity:
                                           ListTileControlAffinity.leading,
                                       onChanged: (newValue) {},
@@ -604,7 +581,6 @@ class NewUsersScreenBody extends GetView<UserScreenController> {
                                         MaterialPageRoute(
                                             builder: (context) =>
                                                 const UsersScreenBody()));
-                                    // Navigator.pop(Get.context!);
                                   }),
                             )
                           ],

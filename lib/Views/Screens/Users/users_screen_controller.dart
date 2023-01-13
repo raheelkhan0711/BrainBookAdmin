@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 
 class UserScreenController extends GetxController {
   //.....Instances.....//
-  // final String adminUserId;
+  //  final String adminUserId;
   final AdminUserGetProvider _adminUserGetProvider = AdminUserGetProvider();
   final AdminUserPostProvider _adminUserPostProvider = AdminUserPostProvider();
   final AdminUsersDetailsGetProvider _adminUsersDetailsGetProvider =
@@ -26,7 +26,7 @@ class UserScreenController extends GetxController {
   //.....Variables Initializations and admin text controllers.....//
   TextEditingController appUserGetController = TextEditingController();
 
-  // UserScreenController(this.adminUserId);
+  //  UserScreenController(this.adminUserId);
 
   //.....On init Function for GETX(controller).....//
   @override

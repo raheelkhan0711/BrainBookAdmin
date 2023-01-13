@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class CountyGetProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _getCountyEndpoint = "api/v1/admin/counties?stateId=";
   Future<List<dynamic>> fetchCounty(String stateId) async {
     print(stateId);

@@ -68,7 +68,7 @@ class SubscriptionScreenBody extends GetView<SubscriptionScreenController> {
                                   scrollDirection: Axis.vertical,
                                   gridDelegate:
                                       const SliverGridDelegateWithMaxCrossAxisExtent(
-                                    mainAxisExtent: 210,
+                                    mainAxisExtent: 240,
                                     mainAxisSpacing: 20,
                                     maxCrossAxisExtent: 190,
                                     crossAxisSpacing: 20,
@@ -76,7 +76,7 @@ class SubscriptionScreenBody extends GetView<SubscriptionScreenController> {
                                   itemBuilder: (context, index) => InkWell(
                                     onTap: () {},
                                     child: Container(
-                                      height: 200,
+                                      height: 220,
                                       width: 180,
                                       decoration: BoxDecoration(
                                           borderRadius:
@@ -91,14 +91,19 @@ class SubscriptionScreenBody extends GetView<SubscriptionScreenController> {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Text(
-                                            controller
-                                                .subscriptionResultList[index]
-                                                .packageTitle
-                                                .toString(),
-                                            style: const TextStyle(
-                                              color: fontColorDark,
-                                              fontWeight: FontWeight.bold,
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 20),
+                                            child: Text(
+                                              controller
+                                                  .subscriptionResultList[index]
+                                                  .packageTitle
+                                                  .toString(),
+                                              style: const TextStyle(
+                                                color: fontColorDark,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                              textAlign: TextAlign.start,
                                             ),
                                           ),
                                           const SizedBox(

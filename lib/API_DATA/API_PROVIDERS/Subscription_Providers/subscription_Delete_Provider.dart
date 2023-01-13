@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 
 class SubscriptionDeleteProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _deleteSubscriptionEndPoint = "api/v1/admin/package";
 
   Future deleteSubscriptionPackage(String id) async {

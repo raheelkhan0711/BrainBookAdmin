@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class PhraseGetProvider {
   final _dio = Dio();
-  final _baseurl = "http://3.12.213.89:8080/";
+  final _baseurl = "http://13.251.135.112:8080/";
   final _getPhraseEndPoint = "api/v1/admin/phrase?languageId=";
 
   Future<List<dynamic>> fetchPhrase(String languageId) async {

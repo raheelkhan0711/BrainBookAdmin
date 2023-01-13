@@ -75,31 +75,13 @@ class LoginScreen extends GetView<LoginScreenController> {
                         ),
                       ),
                     ),
-                    // ListTile(
-                    //   horizontalTitleGap: 0.0,
-                    //   title: const Text(
-                    //     "Remember me",
-                    //     style: TextStyle(fontSize: 13),
-                    //   ),
-                    //   leading: Obx(
-                    //     () => Transform.scale(
-                    //       scale: 0.9,
-                    //       child: Checkbox(
-                    //         shape: CircleBorder(),
-                    //         value: controller.rememberMe,
-                    //         onChanged: (value) {
-                    //           controller.rememberMe = value;
-                    //         },
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
                     SizedBox(
                       height: 40,
                     ),
                     ButtonWidget(
                       title: "LOGIN",
                       onTap: () {
+                        // Get.toNamed(Routes.dashboardScreen);
                         controller.adminLogIn();
                       },
                     ),

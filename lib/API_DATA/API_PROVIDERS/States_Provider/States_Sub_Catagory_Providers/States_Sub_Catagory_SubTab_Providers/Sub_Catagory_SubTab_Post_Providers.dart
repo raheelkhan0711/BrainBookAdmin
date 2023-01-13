@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class SubCatagorySubTabPostProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _postSubCatagorySubTabEndPoint = "api/v1/admin/subTab";
   Future addSubCatagorySubTab(
     String categoryId,

@@ -6,7 +6,7 @@ import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
 class DashboardHomeStatesProvider {
   final _dio = Dio();
-  final String _BaseUrl = "http://3.12.213.89:8080/";
+  final String _BaseUrl = "http://13.251.135.112:8080/";
   final String _dashboardStatesEndpoint = "api/v1/admin/total-states";
 
   Future<dynamic> totalStates() async {

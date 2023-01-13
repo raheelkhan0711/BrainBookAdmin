@@ -37,13 +37,16 @@ class LogoutScreen extends GetView<LogoutController> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 30, vertical: 40),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ButtonWidget(
                                   title: 'Cancel',
                                   onTap: () {
                                     //  Get.back();
                                   }),
+                              const SizedBox(
+                                width: 50,
+                              ),
                               ButtonWidget(
                                   title: 'Logout',
                                   onTap: () {

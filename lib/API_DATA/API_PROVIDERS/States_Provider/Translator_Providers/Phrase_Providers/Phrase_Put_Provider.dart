@@ -1,13 +1,12 @@
 // ignore_for_file: file_names, prefer_interpolation_to_compose_strings, avoid_print
 
 import 'dart:developer';
-
 import 'package:dio/dio.dart';
 
 class PhrasePutProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
-  final _editPhraseEndPoint = "/api/v1/admin/phrase";
+  final _baseUrl = "http://13.251.135.112:8080/";
+  final _editPhraseEndPoint = "api/v1/admin/phrase";
   Future editPhrase(
     String english,
     String targetLanguage,
@@ -23,7 +22,7 @@ class PhrasePutProvider {
         return;
       }
     } on DioError catch (e) {
-      log("Catagory State not Updated: $e");
+      log("phrase not Updated: $e");
       rethrow;
     }
   }

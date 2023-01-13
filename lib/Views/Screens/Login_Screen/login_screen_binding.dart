@@ -5,6 +5,5 @@ class LoginScreenBinding implements Bindings {
   @override
   void dependencies() {
     Get.put(LoginScreenController());
-    // Get.put(GlobalController());
   }
 }

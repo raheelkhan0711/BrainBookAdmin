@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 class LoginProvider {
   final _dio = Dio();
-  final String _BaseUrl = "http://3.12.213.89:8080/";
-  final String _loginEndpoint = "api/v1/admin/login";
+  final String _BaseUrl = "http://13.251.135.112:8080/";
+  final String _loginEndpoint = "api/v1/users/login";
 
   Future<dynamic> loginUser(
       {required String email, required String password}) async {

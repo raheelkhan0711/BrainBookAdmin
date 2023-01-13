@@ -5,7 +5,7 @@ import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
 class CountyPostProvider {
   final _dio = Dio();
-  final _baseUrl = "http://3.12.213.89:8080/";
+  final _baseUrl = "http://13.251.135.112:8080/";
   final _postCountyEndpoint = "api/v1/admin/counties";
 
   Future addNewCounty(String countyName, String stateId) async {
