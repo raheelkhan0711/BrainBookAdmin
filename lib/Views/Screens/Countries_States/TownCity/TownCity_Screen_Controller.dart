@@ -1,8 +1,8 @@
 // ignore_for_file: file_names, no_leading_underscores_for_local_identifiers
 
-import 'package:brain_book_admin/API_DATA/API_MODELS/STATES/TownCity_Models/townCity_Post_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/TownCity_Providers/townCity_Get_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/TownCity_Providers/townCity_Post_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/STATES/TownCity_Models/townCity_Post_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/TownCity_Providers/townCity_Get_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/TownCity_Providers/townCity_Post_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

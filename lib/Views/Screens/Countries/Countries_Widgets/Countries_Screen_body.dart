@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries/Countries_Widgets/Country_Components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_Screen/states_screen.dart';
@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import '../../../../Global_Controller/Global_controller.dart';
+import '../../../../Core/Global_Controller/Global_controller.dart';
 
 class CountryScreenBody extends GetView<CountryScreenController> {
   const CountryScreenBody({super.key});

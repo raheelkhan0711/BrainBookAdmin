@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, unused_field, unused_import
 
-import 'package:brain_book_admin/API_DATA/API_MODELS/Dashboard_Home_Models/dashboard_Home_states_model.dart';
-import 'package:brain_book_admin/API_DATA/API_MODELS/Dashboard_Home_Models/dashboard_Home_users_model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Dashboard_Home_API_Provider/dashboard_Home_states_provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Dashboard_Home_API_Provider/dashboard_Home_users_provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/Dashboard_Home_Models/dashboard_Home_states_model.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/Dashboard_Home_Models/dashboard_Home_users_model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Dashboard_Home_API_Provider/dashboard_Home_states_provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Dashboard_Home_API_Provider/dashboard_Home_users_provider.dart';
 import 'package:brain_book_admin/Views/Screens/Countries/countries_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/home_screen.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_Screen/states_screen.dart';

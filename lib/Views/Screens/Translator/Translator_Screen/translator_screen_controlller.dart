@@ -1,9 +1,9 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
-import 'package:brain_book_admin/API_DATA/API_MODELS/Translator_Models/Translator_Get_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/Translator_Providers/Translator_Get_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/Translator_Providers/Translator_Post_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/Translator_Providers/Translator_Put_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/Translator_Models/Translator_Get_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Translator_Providers/Translator_Get_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Translator_Providers/Translator_Post_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Translator_Providers/Translator_Put_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, avoid_print
 
-import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Catagory_Screen/States_Catagory_Screen_Widgets/Catagory_Components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Catagory_Screen/Catagory_Screen_controller.dart';

@@ -1,8 +1,8 @@
 // ignore_for_file: file_names, no_leading_underscores_for_local_identifiers
-import 'package:brain_book_admin/API_DATA/API_MODELS/STATES/Catagory_Models/Catagory_Get_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Get_provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Post_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Put_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/STATES/Catagory_Models/Catagory_Get_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Get_provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Post_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Put_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

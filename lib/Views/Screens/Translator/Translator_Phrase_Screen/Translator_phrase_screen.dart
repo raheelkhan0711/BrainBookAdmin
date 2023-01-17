@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, unnecessary_brace_in_string_interps
 
-import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Translator/Translator_Phrase_Screen/Translator_Phrase_Screen_Widgets/Translator_Phrase_Sentence.dart';
 import 'package:brain_book_admin/Views/Screens/Translator/Translator_Phrase_Screen/Translator_phrase_screen_controller.dart';

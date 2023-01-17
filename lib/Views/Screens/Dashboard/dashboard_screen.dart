@@ -1,4 +1,4 @@
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/AppColor/colors.dart';
+import 'package:brain_book_admin/Core/App-Utils/AppColor/colors.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard/dashboard_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,6 +1,6 @@
-import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
-import 'package:brain_book_admin/Routes/app_pages.dart';
-import 'package:brain_book_admin/Routes/app_routes.dart';
+import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/Routes/app_pages.dart';
+import 'package:brain_book_admin/Core/Routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

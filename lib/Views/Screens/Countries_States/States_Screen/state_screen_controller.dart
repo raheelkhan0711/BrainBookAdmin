@@ -1,7 +1,7 @@
 // ignore_for_file: unused_field, no_leading_underscores_for_local_identifiers, non_constant_identifier_names
-import 'package:brain_book_admin/API_DATA/API_MODELS/STATES/States_Models/states_Screen_Get_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/States_Providers/state_Screen_Get_provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/States_Provider/States_Providers/states_Screen_Post_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/STATES/States_Models/states_Screen_Get_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/States_Providers/state_Screen_Get_provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/States_Providers/states_Screen_Post_Provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

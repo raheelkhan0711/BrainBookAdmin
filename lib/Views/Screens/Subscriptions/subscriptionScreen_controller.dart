@@ -1,10 +1,10 @@
 // ignore_for_file: file_names, avoid_print, no_leading_underscores_for_local_identifiers, unused_local_variable
 
-import 'package:brain_book_admin/API_DATA/API_MODELS/Subscription%20Models/subscription_Post_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Subscription_Providers/subscription_Delete_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Subscription_Providers/subscription_Get_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Subscription_Providers/subscription_Post_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Subscription_Providers/subscription_Put_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/Subscription%20Models/subscription_Post_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Subscription_Providers/subscription_Delete_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Subscription_Providers/subscription_Get_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Subscription_Providers/subscription_Post_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Subscription_Providers/subscription_Put_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,12 +1,12 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/AppColor/colors.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/App-Images/images.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/App-Utils/AppColor/colors.dart';
+import 'package:brain_book_admin/Core/App-Utils/App-Images/images.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Login_Screen/login_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../OverAll-App-Widgets/TextFormField/text_form_field.dart';
+import '../../../Core/App-Utils/TextFormField/text_form_field.dart';
 
 class LoginScreen extends GetView<LoginScreenController> {
   const LoginScreen({super.key});

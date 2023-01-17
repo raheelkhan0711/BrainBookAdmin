@@ -1,10 +1,10 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
-import 'package:brain_book_admin/API_DATA/API_MODELS/Users%20Models/Admin_User_Get_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Users%20Providers/Admin_User_Get_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Users%20Providers/Admin_User_Post_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Users%20Providers/Admin_UsersDetails_Get_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Users%20Providers/App_Users_Get_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/Users%20Models/Admin_User_Get_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Users%20Providers/Admin_User_Get_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Users%20Providers/Admin_User_Post_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Users%20Providers/Admin_UsersDetails_Get_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Users%20Providers/App_Users_Get_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

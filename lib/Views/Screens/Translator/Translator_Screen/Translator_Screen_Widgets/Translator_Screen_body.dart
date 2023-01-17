@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
-import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Translator/Translator_Phrase_Screen/Translator_phrase_screen.dart';
 import 'package:brain_book_admin/Views/Screens/Translator/Translator_Screen/Translator_Screen_Widgets/Translator_Components.dart';

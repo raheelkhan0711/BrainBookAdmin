@@ -1,9 +1,9 @@
 // ignore_for_file: unused_field, no_leading_underscores_for_local_identifiers, avoid_print
 
-import 'package:brain_book_admin/API_DATA/API_MODELS/Login_Model/Login_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Login_Provider/Login_Provider.dart';
-import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
-import 'package:brain_book_admin/Routes/app_routes.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/Login_Model/Login_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Login_Provider/Login_Provider.dart';
+import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/Routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

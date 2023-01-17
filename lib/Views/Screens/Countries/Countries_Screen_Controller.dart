@@ -1,8 +1,8 @@
 // ignore_for_file: file_names, non_constant_identifier_names, no_leading_underscores_for_local_identifiers
 
-import 'package:brain_book_admin/API_DATA/API_MODELS/Countries%20Models/countries_Get_Model.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Countries_Providers/countries_Get_Provider.dart';
-import 'package:brain_book_admin/API_DATA/API_PROVIDERS/Countries_Providers/countries_Post_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/Countries%20Models/countries_Get_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Countries_Providers/countries_Get_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Countries_Providers/countries_Post_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

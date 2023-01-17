@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, sized_box_for_whitespace
-import 'package:brain_book_admin/Routes/app_routes.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/Routes/app_routes.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/LogOut/logout_Contoller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';

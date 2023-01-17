@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import, prefer_const_literals_to_create_immutables, duplicate_ignore
 
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/TextAndButtonWidgets/textAndBuutonWidgets.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/App-Utils/TextAndButtonWidgets/textAndBuutonWidgets.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard/DashBoard-Widgets/dashboard_appBar.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_Screen/state_screen_controller.dart';

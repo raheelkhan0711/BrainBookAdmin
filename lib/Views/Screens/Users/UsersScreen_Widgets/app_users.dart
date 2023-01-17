@@ -1,11 +1,11 @@
 // ignore_for_file: unnecessary_brace_in_string_interps
 
-import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Views/Screens/Users/users_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../OverAll-App-Widgets/AppColor/colors.dart';
+import '../../../../Core/App-Utils/AppColor/colors.dart';
 
 class AppUsers extends GetView<UserScreenController> {
   const AppUsers({

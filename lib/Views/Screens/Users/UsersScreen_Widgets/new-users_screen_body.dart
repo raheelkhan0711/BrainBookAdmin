@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/AppColor/colors.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/App-Utils/AppColor/colors.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Users/UsersScreen_Widgets/Users_Screen_body.dart';
 import 'package:brain_book_admin/Views/Screens/Users/users_screen_controller.dart';

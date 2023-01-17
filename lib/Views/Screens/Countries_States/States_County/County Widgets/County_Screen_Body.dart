@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, implementation_imports
 
-import 'package:brain_book_admin/Global_Controller/Global_controller.dart';
-import 'package:brain_book_admin/Views/OverAll-App-Widgets/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_County/County%20Widgets/County_Components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_County/County_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/TownCity/TownCity_Screen.dart';
