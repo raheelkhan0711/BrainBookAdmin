@@ -1,5 +1,11 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names, sized_box_for_whitespace, file_names, prefer_final_fields, unused_field
+
+
+import 'dart:io';
+
 import 'package:brain_book_admin/Core/Services/API_MODELS/Login_Model/Login_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/STATES/Catagory_Models/Catagory_Get_Model.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/ImageUploader/ImageProvider.dart';
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Users%20Providers/Admin_UsersDetails_Get_Provider.dart';
 import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
 import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
@@ -12,10 +18,15 @@ import 'package:brain_book_admin/Views/Screens/Subscriptions/subscriptionScreen_
 import 'package:brain_book_admin/Views/Screens/Translator/Translator_Phrase_Screen/Translator_phrase_screen_controller.dart';
 import 'package:brain_book_admin/Views/Screens/Translator/Translator_Screen/translator_screen_controlller.dart';
 import 'package:brain_book_admin/Views/Screens/Users/users_screen_controller.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 
 class GlobalController extends GetxController {
+  final varbb =Get.put(CountryScreenController());
   //.........Global key and Controller Initialization......//
   final formKey = GlobalKey<FormState>();
   CountryScreenController _countryScreenController = CountryScreenController();
@@ -37,7 +48,69 @@ class GlobalController extends GetxController {
   AdminUsersDetailsGetProvider _adminUsersDetailsGetProvider =
       AdminUsersDetailsGetProvider();
 
+
+
+  //constants
+  RxString uploadedImageName=''.obs;
+  String? image_;
+
+  // Image Upload
+  // File? frontShirtImage;
+  // Uint8List frontShirtWeb = Uint8List(8);
+  // Uint8List backShirtWeb = Uint8List(8);
+  //
+  // //  ---------------- get the first shirt image from the gallery ---------------------
+  // void PickImage() async {
+  //   final picker = ImagePicker();
+  //   XFile? img = await picker.pickImage(source: ImageSource.gallery);
+  //   frontShirtImage = File(img!.path);
+  //   print(frontShirtImage!);
+  //   // image_ = await ImageProvide().uploadImage(File(img.path));
+  //   image_= await ImageUploader().imageUploader(frontShirtImage!);
+  //
+  //   // if(img != null){
+  //   //   var i = await img.readAsBytes();
+  //   //   frontShirtWeb = i;
+  //   //   update();
+  //   // }else{
+  //   //   print("No Image Picked");
+  //   // }
+  //   update();
+  // }
+
+
+
+
+
+
 //......... Country DailogBox Method......//
+
+ //Zeshan egasi code
+  Future<dynamic> pickImage() async {
+    print("upload started");
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+
+    if (result != null) {
+      if (kIsWeb) {
+        Uint8List? imageInUnit8List = result.files.first.bytes;
+        String url = await Uploader().asyncFileUpload(imageInUnit8List!);
+        debugPrint('url');
+        debugPrint(url);
+        image_=url;
+        return url;
+      } else {
+        File file = File(result.files.single.path!);
+        String url = await Uploader().uploadFile(file);
+        return url;
+      }
+    } else {
+      // User canceled the picker
+    }
+    // print(url);
+    return null;
+  }
+
+
   Future<dynamic> CountryDailogBox(
     String title,
     buttonText,
@@ -85,6 +158,22 @@ class GlobalController extends GetxController {
                   )
                 ])));
   }
+
+  //category add details
+  GlobalKey<FormState> dialogGlobalKey = GlobalKey<FormState>();
+  List<String> categoryTypes=[
+    'Normal',
+    'Vehicle Stop Form',
+    'Age Calculator',
+    'Tress Passers',
+    '1st Amd "Provokers"',
+    'Subscription Survey',
+    'Retirement Tools',
+    'FBI Most Wanted',
+    'Front Plates',
+    'Amber Alerts',
+  ];
+  String selectedFormType='Normal';
 
   //......... State DailogBox Method......//
   Future<dynamic> StatesDailogBox(
@@ -243,12 +332,13 @@ class GlobalController extends GetxController {
     String townCityId,
     buttonText,
   ) {
+    image_='';
     return Get.defaultDialog(
         titlePadding: EdgeInsets.only(top: 30),
         radius: 10,
         title: title,
         content: Container(
-            height: 300,
+            height: 500,
             width: 500,
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -269,6 +359,51 @@ class GlobalController extends GetxController {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(width: 4.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  SizedBox(
+                    width: 350,
+                    child: Form(
+                      key: dialogGlobalKey,
+                      child: Container(
+                        height: 60,
+                        // width: 170,
+                        child: DropdownButtonFormField(
+                          // value: controller.prevState!.state ?? '',
+                          isExpanded: true,
+
+                          hint: Text("Normal"),
+                          onChanged: (value) async{
+                            selectedFormType=value!;
+                            // GetStatesModel state = value as GetStatesModel;
+                            // controller.selectedStateName=value.state;
+                            // controller.cities.clear();
+                            // controller.counties.clear();
+                            // controller.categories.clear();
+                            // await controller.getCounty(value.sId);
+                          },
+                          items:
+                          // controller.states.length==0?controller.tempListForNoItems:
+                          categoryTypes.map((type) {
+                            // controller.prevState=state;
+                            return DropdownMenuItem(
+                              value: type,
+                              child: Text(type),
+                            );
+                          }).toList(),
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            enabled: false,
+                            enabledBorder: InputBorder.none,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(width: 10),
+                              borderRadius: BorderRadius.circular(12),),),
                         ),
                       ),
                     ),
@@ -300,7 +435,11 @@ class GlobalController extends GetxController {
                               style: ElevatedButton.styleFrom(
                                   backgroundColor:
                                       const Color(0xff073763).withOpacity(0.9)),
-                              onPressed: () {},
+                              onPressed: () async {
+                                // PickImage();
+                                pickImage();
+                                print(image_);
+                              },
                               child: const Text('Add image')),
                         ]),
                   ),
@@ -311,8 +450,8 @@ class GlobalController extends GetxController {
                     padding: const EdgeInsets.symmetric(horizontal: 50),
                     child: ButtonWidget(
                         title: buttonText,
-                        onTap: () {
-                          _catagoryScreenController.createCatagory(townCityId);
+                        onTap: ()async {
+                          _catagoryScreenController.createCatagory(selectedFormType,image_!,townCityId);
                           Navigator.pop(Get.context!);
                         }),
                   )
@@ -321,16 +460,20 @@ class GlobalController extends GetxController {
 
 //......... State Catogory EditDailogBox Method......//
   Future<dynamic> CatagoryEditDailogBox(
+  StateCatagoryGetModel model,
     String title,
     String catagoryId,
     buttonText,
   ) {
+    _catagoryScreenController.catagoryEditController.text=model.title!;
+    image_=model.imageUrl;
+    selectedFormType=model.type!;
     return Get.defaultDialog(
         titlePadding: EdgeInsets.only(top: 30),
         radius: 10,
         title: title,
         content: Container(
-            height: 300,
+            height: 500,
             width: 500,
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -348,11 +491,56 @@ class GlobalController extends GetxController {
                       keyboardType: TextInputType.text,
                       maxLines: 1,
                       decoration: InputDecoration(
-                        hintText: 'Name',
+                        hintText: model.title,
                         hintMaxLines: 1,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(width: 4.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  SizedBox(
+                    width: 350,
+                    child: Form(
+                      key: dialogGlobalKey,
+                      child: Container(
+                        height: 60,
+                        // width: 170,
+                        child: DropdownButtonFormField(
+                          // value: controller.prevState!.state ?? '',
+                          isExpanded: true,
+
+                          hint: Text("Normal"),
+                          onChanged: (value) async{
+                            selectedFormType=value!;
+                            // GetStatesModel state = value as GetStatesModel;
+                            // controller.selectedStateName=value.state;
+                            // controller.cities.clear();
+                            // controller.counties.clear();
+                            // controller.categories.clear();
+                            // await controller.getCounty(value.sId);
+                          },
+                          items:
+                          // controller.states.length==0?controller.tempListForNoItems:
+                          categoryTypes.map((type) {
+                            // controller.prevState=state;
+                            return DropdownMenuItem(
+                              value: type,
+                              child: Text(type),
+                            );
+                          }).toList(),
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            enabled: false,
+                            enabledBorder: InputBorder.none,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(width: 10),
+                              borderRadius: BorderRadius.circular(12),),),
                         ),
                       ),
                     ),
@@ -376,7 +564,7 @@ class GlobalController extends GetxController {
                     child: Column(mainAxisAlignment: MainAxisAlignment.center,
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
-                          const Text('Add Font image'),
+                         Obx(() => Flexible(child: Text(uploadedImageName.value==''?'Add Font image':uploadedImageName.value))),
                           const SizedBox(
                             height: 20,
                           ),
@@ -384,7 +572,9 @@ class GlobalController extends GetxController {
                               style: ElevatedButton.styleFrom(
                                   backgroundColor:
                                       const Color(0xff073763).withOpacity(0.9)),
-                              onPressed: () {},
+                              onPressed: () async{
+                                pickImage();
+                              },
                               child: const Text('Add image')),
                         ]),
                   ),
@@ -396,12 +586,49 @@ class GlobalController extends GetxController {
                     child: ButtonWidget(
                         title: buttonText,
                         onTap: () {
-                          _catagoryScreenController.updateCatagory(catagoryId);
+                          _catagoryScreenController.updateCatagory(selectedFormType,image_!,catagoryId);
                           Navigator.pop(Get.context!);
                         }),
                   )
                 ])));
   }
+  //Image Picker
+  // Future<dynamic> pickImage() async {
+  //   print("upload started");
+  //   FilePickerResult? result = await FilePicker.platform.pickFiles();
+  //
+  //   if (result != null) {
+  //     if (kIsWeb) {
+  //       Uint8List? imageInUnit8List = result.files.first.bytes;
+  //       String url = await
+  //       Uploader()
+  //           .asyncFileUpload(imageInUnit8List!);
+  //       print(url);
+  //       return url;
+  //     } else {
+  //       File file = File(result.files.single.path!);
+  //       String url = await Uploader().uploadFile(file);
+  //       return url;
+  //     }
+  //   } else {
+  //     // User canceled the picker
+  //   }
+  //   print('url');
+  //   return null;
+  // }
+  // Future imagePicker() async {
+  //   FilePickerResult? result = await FilePicker.platform.pickFiles();
+  //
+  //   if (result != null) {
+  //     File file = File(result.files.single.path!);
+  //     // image_=file;
+  //   } else {
+  //     // User canceled the picker
+  //   }
+  //
+  //   // File? imageFile = (await ImagePickerWeb.getMultiImagesAsFile()) as File?;
+  //
+  // }
 
 //......... State Sub Catagory AddText DailogBox Method......//
   Future<dynamic> StatesSubCatagoryAddTextDailogBox(
@@ -478,6 +705,7 @@ class GlobalController extends GetxController {
                         onTap: () {
                           _subCatagoryScreenController
                               .createSubCatagoryText(categoryId);
+
                           Navigator.pop(Get.context!);
                         }),
                   )

@@ -10,6 +10,8 @@ class Routes {
   static const String townCityScreen = "/TownCityScreen";
   static const String catagoryScreen = "/CatagoryScreen";
   static const String subCatagoryScreen = "/SubCatagoryScreen";
+  static const String trespassersScreen = "/trespassersScreen";
+  static const String secondLevelCatagoryScreen = "/SecondLevelCatagoryScreen";
   static const String subscriptionScreen = "/SubscriptionScreen";
   static const String usersScreen = "/UserScreen";
   static const String translatorScreen = "/TranslatorScreen";

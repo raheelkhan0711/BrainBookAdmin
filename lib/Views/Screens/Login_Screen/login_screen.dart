@@ -20,76 +20,76 @@ class LoginScreen extends GetView<LoginScreenController> {
       body: Center(
         child: Container(
           color: Colors.white.withOpacity(0.5),
-          height: Get.height * 0.65,
-          width: Get.width * 0.5,
+          height: Get.height * 0.8,
+          width: Get.width * 0.7,
           child: Padding(
             padding: const EdgeInsets.only(left: 150, right: 150, bottom: 30),
             child: Form(
               key: controller.formKey,
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const SizedBox(
-                      height: 65,
-                    ),
-                    Image.asset(
-                      splashImage,
-                      height: 120,
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    TextFormFieldWidget(
-                      controller: controller.emailController,
-                      // validator: validatorController.emailValidator,
-                      title: "Email",
-                      icon: Icon(Icons.person_outlined, color: fontColorDark),
-                      obscureText: false,
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Obx(
-                      () => TextFormFieldWidget(
-                        controller: controller.passwordController,
-                        // validator: validatorController.passwordValidator,
-                        title: "Password ",
-                        icon: const Icon(
-                          Icons.lock_open_outlined,
-                          color: fontColorDark,
-                        ),
-                        obscureText: controller.obscure,
-                        inkWell: GestureDetector(
-                          onTap: () {
-                            controller.obscure = !controller.obscure;
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10.0, right: 8),
-                            child: Text(
-                              controller.obscure ? "Show" : "Hide",
-                              style: GoogleFonts.poppins(color: fontColorLight),
-                            ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Spacer(),
+                  // const SizedBox(
+                  //   height: 65,
+                  // ),
+                  Image.asset(
+                    splashImage,
+                    height: 120,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  TextFormFieldWidget(
+                    controller: controller.emailController,
+                    // validator: validatorController.emailValidator,
+                    title: "Email",
+                    icon: Icon(Icons.person_outlined, color: fontColorDark),
+                    obscureText: false,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Obx(
+                    () => TextFormFieldWidget(
+                      controller: controller.passwordController,
+                      // validator: validatorController.passwordValidator,
+                      title: "Password ",
+                      icon: const Icon(
+                        Icons.lock_open_outlined,
+                        color: fontColorDark,
+                      ),
+                      obscureText: controller.obscure,
+                      inkWell: InkWell(
+                        onTap: () {
+                          controller.obscure = !controller.obscure;
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10.0, right: 25),
+                          child: Text(
+                            controller.obscure ? "Show" : "Hide",
+                            style: GoogleFonts.poppins(color: fontColorLight),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    ButtonWidget(
-                      title: "LOGIN",
-                      onTap: () {
-                        // Get.toNamed(Routes.dashboardScreen);
-                        controller.adminLogIn();
-                      },
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  ButtonWidget(
+                    title: "LOGIN",
+                    onTap: () {
+                      // Get.toNamed(Routes.dashboardScreen);
+                      controller.adminLogIn();
+                    },
+                  ),
+                  Spacer()
+                  // const SizedBox(
+                  //   height: 30,
+                  // ),
+                ],
               ),
             ),
           ),

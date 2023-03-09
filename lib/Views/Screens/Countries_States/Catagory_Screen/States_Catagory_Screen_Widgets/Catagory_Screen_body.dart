@@ -2,6 +2,10 @@
 
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/STATES/Catagory_Models/Catagory_Get_Model.dart';
+import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/TrespassersViewScreen/TrespassersScreen.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/TrespassersViewScreen/TrespassersScreen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Catagory_Screen/States_Catagory_Screen_Widgets/Catagory_Components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Catagory_Screen/Catagory_Screen_controller.dart';
@@ -10,8 +14,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CatagoryScreenBody extends GetView<CatagoryScreenController> {
-  const CatagoryScreenBody({required this.townCityId, super.key});
+  CatagoryScreenBody({required this.townCityId, super.key});
   final String townCityId;
+  final screenController= Get.find<CountryScreenController>();
 
   @override
   Widget build(BuildContext context) {
@@ -74,19 +79,36 @@ class CatagoryScreenBody extends GetView<CatagoryScreenController> {
                               ),
                               itemBuilder: (context, index) => InkWell(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              SubCatagoryScreen(
-                                                categoryId: controller
-                                                    .catagoryResultList[index]
-                                                    .catagoryId
-                                                    .toString(),
-                                              )));
+                                  // StateCatagoryGetModel;
+                                  if(controller
+                                      .catagoryResultList[index].type=='Normal'){
+                                    print('controller.catagoryResultList[index]');
+                                    print(controller.catagoryResultList[index]);
+                                    screenController.contryScreenPath.add(SubCatagoryScreen(
+                                      categoryId: controller
+                                          .catagoryResultList[index]
+                                          .catagoryId
+                                          .toString(),
+                                    )
+                                    );
+                                    screenController.update();
+                                  }else if(controller.catagoryResultList[index].type=='Tress Passers'){
+                                    Get.put(TrespassersController());
+                                    screenController.contryScreenPath.add(TrespassersScreen(townId: controller
+                                        .catagoryResultList[index]
+                                        .townCityId
+                                        .toString(),));
+                                    screenController.update();
+                                  }else{
+                                    var snackBar = SnackBar(duration:Duration(milliseconds: 600),content: Text('Cannot be opened due t its type ${controller.catagoryResultList[index].type}'));
+                                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                                    // Get.snackbar('BrainBook', "",colorText: Colors.red);
+                                    // print();
+                                  }
                                 },
                                 child: CatagoryComponents(
-                                  image: 'assets/startpage/59.png',
+                                  image: controller
+                                      .catagoryResultList[index].imageUrl,
                                   title: controller
                                       .catagoryResultList[index].title
                                       .toString(),
@@ -94,7 +116,8 @@ class CatagoryScreenBody extends GetView<CatagoryScreenController> {
                                   catagoryId: controller
                                       .catagoryResultList[index].catagoryId
                                       .toString(),
-                                  edit: Icons.edit,
+                                  edit: Icons.edit, model: controller
+                                    .catagoryResultList[index],
                                 ),
                               ),
                             );

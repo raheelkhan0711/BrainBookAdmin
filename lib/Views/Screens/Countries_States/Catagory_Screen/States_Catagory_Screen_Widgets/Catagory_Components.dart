@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
+import 'package:brain_book_admin/Core/Services/API_MODELS/STATES/Catagory_Models/Catagory_Get_Model.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_Screen/state_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,12 +9,14 @@ class CatagoryComponents extends GetView<StatesScreenController> {
   const CatagoryComponents({
     Key? key,
     required this.image,
+    required this.model,
     required this.title,
     required this.townCityId,
     required this.catagoryId,
     this.edit,
   }) : super(key: key);
   final String image;
+  final StateCatagoryGetModel model;
   final String title;
   final String townCityId;
   final String catagoryId;
@@ -33,7 +36,7 @@ class CatagoryComponents extends GetView<StatesScreenController> {
             const SizedBox(
               height: 20,
             ),
-            Image.asset(
+            Image.network(
               image,
               scale: 1.5,
             ),
@@ -49,7 +52,7 @@ class CatagoryComponents extends GetView<StatesScreenController> {
             InkWell(
               onTap: () {
                 Get.find<GlobalController>()
-                    .CatagoryEditDailogBox('Field Name', catagoryId, 'Update');
+                    .CatagoryEditDailogBox(model,'Field Name', catagoryId, 'Update');
               },
               child: Icon(edit),
             )

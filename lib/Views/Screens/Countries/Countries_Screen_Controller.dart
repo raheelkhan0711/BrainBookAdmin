@@ -3,10 +3,14 @@
 import 'package:brain_book_admin/Core/Services/API_MODELS/Countries%20Models/countries_Get_Model.dart';
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Countries_Providers/countries_Get_Provider.dart';
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/Countries_Providers/countries_Post_Provider.dart';
+import 'package:brain_book_admin/Views/Screens/Countries/Countries_Widgets/Countries_Screen_body.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CountryScreenController extends GetxController {
+  //.....Screen Path List.....//
+  List<Widget> contryScreenPath=[CountryScreenBody()];
+
   //.....Instances.....//
   final CountriesGetProvider _countriesGetProvider = CountriesGetProvider();
   final CountriesPostProvider _countriesPostProvider = CountriesPostProvider();

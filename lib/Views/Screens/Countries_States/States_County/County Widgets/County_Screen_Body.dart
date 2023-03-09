@@ -2,6 +2,7 @@
 
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_County/County%20Widgets/County_Components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_County/County_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/TownCity/TownCity_Screen.dart';
@@ -10,8 +11,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CountyScreenBody extends GetView<CountyScreenController> {
-  const CountyScreenBody({required this.stateId, super.key});
+   CountyScreenBody({required this.stateId, super.key});
   final String stateId;
+  final screenController= Get.find<CountryScreenController>();
 
   @override
   Widget build(BuildContext context) {
@@ -77,17 +79,25 @@ class CountyScreenBody extends GetView<CountyScreenController> {
                                       ),
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      TownCityScreen(
-                                                        countyId: controller
-                                                            .countyResultList[
-                                                                index]
-                                                            .countyId
-                                                            .toString(),
-                                                      )));
+                                          screenController.contryScreenPath.add(TownCityScreen(
+                                            countyId: controller
+                                                .countyResultList[
+                                            index]
+                                                .countyId
+                                                .toString(),
+                                          ));
+                                          screenController.update();
+                                          // Navigator.push(
+                                          //     context,
+                                          //     MaterialPageRoute(
+                                          //         builder: (context) =>
+                                          //             TownCityScreen(
+                                          //               countyId: controller
+                                          //                   .countyResultList[
+                                          //                       index]
+                                          //                   .countyId
+                                          //                   .toString(),
+                                          //             )));
                                         },
                                         child: CountyComponents(
                                             image: 'assets/startpage/83.png',

@@ -8,59 +8,60 @@ import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Cat
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Details_Providers/Text_Get_Provider.dart';
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Details_Providers/Text_Post_Provider.dart';
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Details_Providers/Text_Put_Provider.dart';
+import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/SecondLevel_Category_Providers/SecondLevelCategoryProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SubCatagoryScreenController extends GetxController {
+class SecondLevelSubCatagoryScreenController extends GetxController {
   //.....Instances.....//
-  final SubCatagoryTextGetProvider _subCatagoryTextGetProvider =
-      SubCatagoryTextGetProvider();
-  final SubCatagoryTextPostProvider _subCatagoryTextPostProvider =
-      SubCatagoryTextPostProvider();
-  final SubCatagoryPutProvider _subCatagoryPutProvider =
-      SubCatagoryPutProvider();
-  final SubCatagorySubTabGetProvider _subCatagorySubTabGetProvider =
-      SubCatagorySubTabGetProvider();
-  final SubCatagorySubTabPostProvider _subCatagorySubTabPostProvider =
-      SubCatagorySubTabPostProvider();
-  final SubCatagorySubTabPutProvider _subCatagorySubTabPutProvider =
-      SubCatagorySubTabPutProvider();
-  final SubCatagorySubTabDeleteProvider _subCatagorySubTabDeleteProvider =
-      SubCatagorySubTabDeleteProvider();
+  final SecondLevelCatagoryTextGetProvider _secondLevelCatagoryTextGetProvider =
+  SecondLevelCatagoryTextGetProvider();
+  final SecondLevelCatagoryTextPostProvider _secondLevelCatagoryTextPostProvider =
+  SecondLevelCatagoryTextPostProvider();
+  final SecondLevelCatagoryTextPutProvider _secondLevelCatagoryPutProvider =
+  SecondLevelCatagoryTextPutProvider();
+  final SecondLevelCatagorySubTabGetProvider _secondLevelCatagorySubTabGetProvider =
+  SecondLevelCatagorySubTabGetProvider();
+  final SecondLevelCatagorySubTabPostProvider _secondLevelCatagorySubTabPostProvider =
+  SecondLevelCatagorySubTabPostProvider();
+  final SecondLevelCatagorySubTabPutProvider _secondLevelCatagorySubTabPutProvider =
+  SecondLevelCatagorySubTabPutProvider();
+  final SecondLevelCatagorySubTabDeleteProvider _secondLevelCatagorySubTabDeleteProvider =
+  SecondLevelCatagorySubTabDeleteProvider();
 
   //.....Variables Initializations.....//
   final formKey = GlobalKey<FormState>();
   final String categoryId;
   //..... Text Editing Controllers for Sub Catagory.....//
-  TextEditingController subCatagoryGetController = TextEditingController();
-  TextEditingController subCatagoryTitlePostController =
+  TextEditingController secondLevelCatagoryGetController = TextEditingController();
+  TextEditingController secondLevelCatagoryTitlePostController =
       TextEditingController();
-  TextEditingController subCatagoryDescriptionPostController =
+  TextEditingController secondLevelCatagoryDescriptionPostController =
       TextEditingController();
-  TextEditingController subCatagoryTitleEditController =
+  TextEditingController secondLevelCatagoryTitleEditController =
       TextEditingController();
-  TextEditingController subCatagoryDescriptionEditController =
+  TextEditingController secondLevelCatagoryDescriptionEditController =
       TextEditingController();
   //..... Text Editing Controllers for Sub Catagory SubTab.....//
-  TextEditingController subCatagorySubTabGetController =
+  TextEditingController secondLevelCatagorySubTabGetController =
       TextEditingController();
-  TextEditingController subCatagorySubTabPostController =
+  TextEditingController secondLevelCatagorySubTabPostController =
       TextEditingController();
-  TextEditingController subCatagorySubTabEditController =
+  TextEditingController secondLevelCatagorySubTabEditController =
       TextEditingController();
-  TextEditingController subCatagorySubTabDeleteController =
+  TextEditingController secondLevelCatagorySubTabDeleteController =
       TextEditingController();
 
-  SubCatagoryScreenController(this.categoryId);
+  SecondLevelSubCatagoryScreenController(this.categoryId);
 
   //.....On init Function for GETX(controller).....//
   @override
   Future<void> onInit() async {
     //......... Called StatesCtagoryScreen data in variables on Init function ......//
     subCatagoryTextResultList =
-        await _subCatagoryTextGetProvider.fetchSubCatagoryText(categoryId);
+        await _secondLevelCatagoryTextGetProvider.fetchSubCatagoryText(categoryId);
     subCatagorySubTabResultList =
-        await _subCatagorySubTabGetProvider.fetchSubCatagorySubTab(categoryId);
+        await _secondLevelCatagorySubTabGetProvider.fetchSubCatagorySubTab(categoryId);
     //.....Get Builder method.....//
     update();
     super.onInit();
@@ -73,18 +74,18 @@ class SubCatagoryScreenController extends GetxController {
   //...Add States Method in Controlller for calling a method in a Variables from Provider class ..//
   void createSubCatagoryText(String categoryId) async {
     print(categoryId);
-    var _statesSubCatagoryResult = await _subCatagoryTextPostProvider
-        .addSubCatagoryText(categoryId, subCatagoryTitlePostController.text,
-            subCatagoryDescriptionPostController.text)
+    var _statesSubCatagoryResult = await _secondLevelCatagoryTextPostProvider
+        .addSubCatagoryText(categoryId, secondLevelCatagoryTitlePostController.text,
+            secondLevelCatagoryDescriptionPostController.text)
         .whenComplete(() async {
       subCatagoryTextResultList.add(SubCatagoryTextGetModel(
-        title: subCatagoryTitlePostController.text.toString(),
-        description: subCatagoryDescriptionPostController.text.toString(),
+        title: secondLevelCatagoryTitlePostController.text.toString(),
+        description: secondLevelCatagoryDescriptionPostController.text.toString(),
       ));
       print('ttytytytytytyytyytytytytytyyt');
       update();
-      subCatagoryTitlePostController.clear();
-      subCatagoryDescriptionPostController.clear();
+      secondLevelCatagoryTitlePostController.clear();
+      secondLevelCatagoryDescriptionPostController.clear();
     });
     if (_statesSubCatagoryResult is String) {
       Get.snackbar(
@@ -97,16 +98,16 @@ class SubCatagoryScreenController extends GetxController {
 
   void createSubCatagorySubTab(String categoryId) async {
     // print(catagoryId);
-    var _subCatagorySubTabResult = await _subCatagorySubTabPostProvider
+    var _subCatagorySubTabResult = await _secondLevelCatagorySubTabPostProvider
         .addSubCatagorySubTab(
       categoryId,
-      subCatagorySubTabPostController.text,
+      secondLevelCatagorySubTabPostController.text,
     )
         .whenComplete(() async {
       subCatagorySubTabResultList.add(SubCatagorySubTabGetModel(
-        title: subCatagorySubTabPostController.text.toString(),
+        title: secondLevelCatagorySubTabPostController.text.toString(),
       ));
-      subCatagorySubTabPostController.clear();
+      secondLevelCatagorySubTabPostController.clear();
       update();
     });
     if (_subCatagorySubTabResult is String) {
@@ -121,12 +122,12 @@ class SubCatagoryScreenController extends GetxController {
 
   //...Add Edit States Method in Controlller for calling a method in a Variables from Provider class ..//
   void updateSubCatagoryText(String subCatagoryId) async {
-    var _editSubCatagoryResult = await _subCatagoryPutProvider
-        .editSubCatagoryText(subCatagoryTitleEditController.text,
-            subCatagoryDescriptionEditController.text, subCatagoryId)
+    var _editSubCatagoryResult = await _secondLevelCatagoryPutProvider
+        .editSubCatagoryText(secondLevelCatagoryTitleEditController.text,
+            secondLevelCatagoryDescriptionEditController.text, subCatagoryId)
         .whenComplete(() async {
-      subCatagoryTitleEditController.clear();
-      subCatagoryDescriptionEditController.clear();
+      secondLevelCatagoryTitleEditController.clear();
+      secondLevelCatagoryDescriptionEditController.clear();
     });
     if (_editSubCatagoryResult is String) {
       Get.snackbar(
@@ -139,11 +140,11 @@ class SubCatagoryScreenController extends GetxController {
   }
 
   void updateSubCatagorySubTab(String subCatagoryId) async {
-    var _editSubCatagorySubTabResult = await _subCatagorySubTabPutProvider
+    var _editSubCatagorySubTabResult = await _secondLevelCatagorySubTabPutProvider
         .editSubCatagorySubTab(
-            subCatagorySubTabEditController.text, subCatagoryId)
+            secondLevelCatagorySubTabEditController.text, subCatagoryId)
         .whenComplete(() async {
-      subCatagorySubTabEditController.clear();
+      secondLevelCatagorySubTabEditController.clear();
     });
     if (_editSubCatagorySubTabResult is String) {
       Get.snackbar(
@@ -156,10 +157,10 @@ class SubCatagoryScreenController extends GetxController {
   }
 
   void deleteSubCatagorySubTab(String subCatagoryId) async {
-    var _deleteSubCatagorySubTabResult = await _subCatagorySubTabDeleteProvider
+    var _deleteSubCatagorySubTabResult = await _secondLevelCatagorySubTabDeleteProvider
         .deleteSubCatagorySubTab(subCatagoryId)
         .whenComplete(() async {
-      subCatagorySubTabDeleteController.clear();
+      secondLevelCatagorySubTabDeleteController.clear();
     });
     update();
   }

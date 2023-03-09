@@ -5,6 +5,7 @@ class StateCatagoryGetModel {
   String? townCityId;
   String? title;
   String? imageUrl;
+  String? type;
 
   StateCatagoryGetModel(
       {this.catagoryId, this.townCityId, this.title, this.imageUrl});
@@ -14,6 +15,7 @@ class StateCatagoryGetModel {
     townCityId = json['townCity'];
     title = json['title'];
     imageUrl = json['ImageUrl'];
+    type = json['type'];
   }
 
   Map<String, dynamic> toJson() {
@@ -22,6 +24,7 @@ class StateCatagoryGetModel {
     data['townCity'] = townCityId;
     data['title'] = title;
     data['ImageUrl'] = imageUrl;
+    data['type'] = type;
     return data;
   }
 }

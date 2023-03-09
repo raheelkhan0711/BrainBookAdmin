@@ -2,11 +2,15 @@
 
 import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Binding.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Catagory_Screen/Catagory_binding.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/Second_Level_Catogry_Screen/Sub_Catagory_Screen.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/Second_Level_Catogry_Screen/Sub_Catagory_Screen_binding.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_County/County_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_County/County_Screen_Binding.dart';
 import 'package:brain_book_admin/Views/Screens/Countries/countries_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/TownCity/TownCity_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/TownCity/TownCity_Screen_Binding.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/TrespassersViewScreen/TrespassersScreen.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/TrespassersViewScreen/TrespassersScreen_binding.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard/dashboard_screen.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard/dashboard_screen_binding.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/home_screen.dart';
@@ -79,6 +83,17 @@ class Pages {
               categoryId: "",
             ),
         binding: SubCatagoryScreenBinding()),
+    GetPage(
+        name: Routes.trespassersScreen,
+        page: () => TrespassersScreen( townId: '',
+        ),
+        binding: TrespassersBinding()),
+    GetPage(
+        name: Routes.secondLevelCatagoryScreen,
+        page: () => SecondLevelSubCatagoryScreen(
+              categoryId: "",
+            ),
+        binding: SeconLevelSubCatagoryScreenBinding()),
     GetPage(
         name: Routes.subscriptionScreen,
         page: () => SubscriptionScreen(),

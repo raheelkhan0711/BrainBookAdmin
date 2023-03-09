@@ -2,6 +2,7 @@
 
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/TownCity/TownCity_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/TownCity/TownCity_Widgets/TownCity_Componenets.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Catagory_Screen/Catagory_screen.dart';
@@ -10,11 +11,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TownCityScreenBody extends GetView<TownCityScreenController> {
-  const TownCityScreenBody({
+  TownCityScreenBody({
     super.key,
     required this.countyId,
   });
   final String countyId;
+  final screenController= Get.find<CountryScreenController>();
 
   @override
   Widget build(BuildContext context) {
@@ -83,17 +85,25 @@ class TownCityScreenBody extends GetView<TownCityScreenController> {
                                       ),
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      CatagoryScreen(
-                                                        townCityId: controller
-                                                            .townCityResultList[
-                                                                index]
-                                                            .townCityId
-                                                            .toString(),
-                                                      )));
+                                          screenController.contryScreenPath.add(CatagoryScreen(
+                                            townCityId: controller
+                                                .townCityResultList[
+                                            index]
+                                                .townCityId
+                                                .toString(),
+                                          ));
+                                          screenController.update();
+                                          // Navigator.push(
+                                          //     context,
+                                          //     MaterialPageRoute(
+                                          //         builder: (context) =>
+                                          //             CatagoryScreen(
+                                          //               townCityId: controller
+                                          //                   .townCityResultList[
+                                          //                       index]
+                                          //                   .townCityId
+                                          //                   .toString(),
+                                          //             )));
                                         },
                                         child: TownCityComponents(
                                           image: 'assets/startpage/19.png',

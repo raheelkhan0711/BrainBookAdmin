@@ -16,6 +16,7 @@ class StatesScreen extends GetView<StatesScreenController> {
   const StatesScreen({required this.countryId, super.key});
   final String countryId;
 
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,6 +24,7 @@ class StatesScreen extends GetView<StatesScreenController> {
         body: GetBuilder<StatesScreenController>(
           init: StatesScreenController(countryId),
           builder: (_) {
+
             return StatesScreenBody(
               countryId: countryId,
             );

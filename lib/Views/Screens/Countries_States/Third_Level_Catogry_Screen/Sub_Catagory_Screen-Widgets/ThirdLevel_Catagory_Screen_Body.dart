@@ -2,22 +2,20 @@
 
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
-import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
-import 'package:brain_book_admin/Views/Screens/Countries_States/Second_Level_Catogry_Screen/Sub_Catagory_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Second_Level_Catogry_Screen/Sub_Catagory_Screen_Controller.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/Third_Level_Catogry_Screen/ThirdSub_Catagory_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Sub_Catogry_Screen/Sub_Catagory_Screen_Controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SubCatagoryScreenBody extends GetView<SubCatagoryScreenController> {
-  SubCatagoryScreenBody({
+class ThirdLevelSubCatagoryScreenBody extends GetView<ThirdLevelSubCatagoryScreenController> {
+  ThirdLevelSubCatagoryScreenBody({
     required this.categoryId,
     super.key,
   });
   final String categoryId;
-  final screenController= Get.find<CountryScreenController>();
 
   @override
   Widget build(BuildContext context) {
@@ -126,20 +124,20 @@ class SubCatagoryScreenBody extends GetView<SubCatagoryScreenController> {
                 const SizedBox(
                   height: 50,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const DashboardHomeText(
-                        title1: 'Sub Tab', title2: '', title3: ''),
-                    ButtonWidget(
-                        title: 'Add New tab',
-                        onTap: () {
-                          Get.find<GlobalController>()
-                              .SubCatagorySubTabDailogBox(
-                                  'Add New Tab', categoryId, 'Add');
-                        })
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     const DashboardHomeText(
+                //         title1: 'Sub Tab', title2: '', title3: ''),
+                //     // ButtonWidget(
+                //     //     title: 'Add New tab',
+                //     //     onTap: () {
+                //     //       Get.find<GlobalController>()
+                //     //           .SubCatagorySubTabDailogBox(
+                //     //               'Add New Tab', categoryId, 'Add');
+                //     //     })
+                //   ],
+                // ),
                 const SizedBox(
                   height: 30,
                 ),
@@ -159,24 +157,6 @@ class SubCatagoryScreenBody extends GetView<SubCatagoryScreenController> {
                     ),
                     itemBuilder: (context, index) => InkWell(
                         onTap: () {
-                          Get.to(SecondLevelSubCatagoryScreen(
-                            categoryId: controller
-                                .subCatagorySubTabResultList[index]
-                                .subCatagoryId
-                                .toString(),
-                          ));
-                          // Get.put(SecondLevelSubCatagoryScreenController(controller
-                          //     .subCatagorySubTabResultList[index]
-                          //     .subCatagoryId
-                          //     .toString()));
-                          //
-                          // screenController.contryScreenPath.add(SecondLevelSubCatagoryScreen(
-                          //   categoryId: controller
-                          //       .subCatagorySubTabResultList[index]
-                          //       .subCatagoryId
-                          //       .toString(),
-                          // ));
-                          // screenController.update();
                         },
                         child: Container(
                           height: 100,

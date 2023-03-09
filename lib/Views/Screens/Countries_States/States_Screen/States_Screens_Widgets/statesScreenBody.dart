@@ -2,6 +2,7 @@
 
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
+import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_County/County_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/States_Screen/States_Screens_Widgets/State_Components.dart';
@@ -11,10 +12,11 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class StatesScreenBody extends GetView<StatesScreenController> {
-  const StatesScreenBody({
+   StatesScreenBody({
     required this.countryId,
     Key? key,
   }) : super(key: key);
+  final screenController= Get.find<CountryScreenController>();
   final String countryId;
 
   @override
@@ -81,17 +83,26 @@ class StatesScreenBody extends GetView<StatesScreenController> {
                                       ),
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      CountyScreen(
-                                                        stateId: controller
-                                                            .statesResultList[
-                                                                index]
-                                                            .stateId
-                                                            .toString(),
-                                                      )));
+                                          screenController.contryScreenPath.add(CountyScreen(
+                                            stateId: controller
+                                                .statesResultList[
+                                            index]
+                                                .stateId
+                                                .toString(),
+                                          ));
+                                          screenController.update();
+
+                                          // Navigator.push(
+                                          //     context,
+                                          //     MaterialPageRoute(
+                                          //         builder: (context) =>
+                                          //             CountyScreen(
+                                          //               stateId: controller
+                                          //                   .statesResultList[
+                                          //                       index]
+                                          //                   .stateId
+                                          //                   .toString(),
+                                          //             )));
                                         },
                                         child: StatesComponents(
                                           image: 'assets/startpage/7.png',
