@@ -3,6 +3,7 @@
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Views/Screens/Users/users_screen_controller.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import '../../../../Core/App-Utils/AppColor/colors.dart';
 
@@ -17,7 +18,7 @@ class AdminPanelUser extends GetView<UserScreenController> {
   Widget build(BuildContext context) {
     return Container(
         height: 300,
-        width: 1400,
+        // width: 1400,
         decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(15))),
@@ -26,44 +27,47 @@ class AdminPanelUser extends GetView<UserScreenController> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 50, top: 15),
-                child: Row(
-                  children: const [
-                    Text(
-                      'ID',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 110,
-                    ),
-                    Text(
-                      'Name',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 235,
-                    ),
-                    Text(
-                      'Email',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 235,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 10, left: 20),
-                      child: Text(
-                        'Mobile Number',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                child: SizedBox(
+                  width: Get.width,
+                  child: Row(
+                    children:[
+                      SizedBox(
+                        width: Get.width*0.1,
+                        child: Text(
+                          'ID',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 380,
-                    ),
-                    Text(
-                      'Action',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                      SizedBox(
+                        width: Get.width*0.2,
+                        child: Text(
+                          'Name',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Get.width*0.14,
+                        child: Text(
+                          'Email',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Get.width*0.16,
+                        child: Text(
+                          'Mobile Number',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Get.width*0.1,
+                        child: Text(
+                          'Action',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const Divider(),
@@ -72,73 +76,55 @@ class AdminPanelUser extends GetView<UserScreenController> {
                 builder: (_) {
                   return ListView.builder(
                       shrinkWrap: true,
-                      itemCount: controller.adminUserResultList.length,
+                      // itemCount: controller.adminUserResultList.length,
+                      itemCount: 1,
                       itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Padding(
-                            padding: const EdgeInsets.only(top: 15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  '${index}',
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold),
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children:[
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: SizedBox(
+                                width: Get.width*0.06,
+                                child: Text(
+                                  'ID',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                const SizedBox(
-                                  width: 110,
-                                ),
-                                SizedBox(
-                                  width: 100,
-                                  child: Text(
-                                    controller.adminUserResultList[index].name
-                                        .toString(),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 170,
-                                ),
-                                SizedBox(
-                                  width: 150,
-                                  child: Text(
-                                    controller.adminUserResultList[index].email
-                                        .toString(),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 150,
-                                ),
-                                SizedBox(
-                                  width: 100,
-                                  child: Text(
-                                    controller.adminUserResultList[index].phone
-                                        .toString(),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 330,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 80),
-                                  child: SizedBox(
-                                    width: 140,
-                                    child: ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                            backgroundColor:
-                                                bottomImageSelectedColor),
-                                        onPressed: () {
-                                          Get.find<GlobalController>()
-                                              .AdminUsersDetailsDailogBox(
-                                                  'Users Details',
-                                                  adminUserId,
-                                                  'Close');
-                                        },
-                                        child: const Text('Action')),
-                                  ),
-                                )
-                              ],
+                              ),
                             ),
-                          ),
+                            SizedBox(
+                              width: Get.width*0.18,
+                              child: Text(
+                                '${adminUserId}',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            SizedBox(
+                              width: Get.width*0.14,
+                              child: Text(
+                                'Email',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            SizedBox(
+                              width: Get.width*0.16,
+                              child: Text(
+                                'Mobile Number',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            SizedBox(
+                              width: Get.width*0.1,
+                              child: Text(
+                                'Action',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            SizedBox(
+                              width: Get.width*0.008,
+                            )
+                          ],
                         );
                       });
                 },

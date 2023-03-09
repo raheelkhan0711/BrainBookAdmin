@@ -7,6 +7,8 @@ class CatagoryPutProvider {
   final _baseUrl = "http://13.251.135.112:8080/";
   final _editCatagoryEndPoint = "api/v1/admin/category";
   Future editCatagory(
+      String type,
+      String imageUrl,
     String title,
     String catagoryId,
   ) async {
@@ -14,6 +16,8 @@ class CatagoryPutProvider {
       final editCatagoryResponce = await _dio
           .put(_baseUrl + "$_editCatagoryEndPoint/$catagoryId", data: {
         "title": title,
+        "ImageUrl": imageUrl,
+        "type": type,
       });
       if (editCatagoryResponce.statusCode == 200) {
         print(editCatagoryResponce.data);

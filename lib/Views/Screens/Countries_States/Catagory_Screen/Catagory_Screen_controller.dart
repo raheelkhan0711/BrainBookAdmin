@@ -1,4 +1,8 @@
 // ignore_for_file: file_names, no_leading_underscores_for_local_identifiers
+
+
+import 'dart:io';
+
 import 'package:brain_book_admin/Core/Services/API_MODELS/STATES/Catagory_Models/Catagory_Get_Model.dart';
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Get_provider.dart';
 import 'package:brain_book_admin/Core/Services/API_PROVIDERS/States_Provider/Catagory_Providers/Catagory_Post_Provider.dart';
@@ -34,9 +38,9 @@ class CatagoryScreenController extends GetxController {
   List<dynamic> catagoryResultList = [].obs;
 
   //...Add States Method in Controlller for calling a method in a Variables from Provider class ..//
-  void createCatagory(String townCityId) async {
+  void createCatagory(String cTypeString, imageUrl,String townCityId) async {
     var _catagoryResult = await _catagoryPostProvider
-        .addCatagory(catagoryPostController.text, townCityId)
+        .addCatagory(cTypeString,imageUrl,catagoryPostController.text, townCityId)
         .whenComplete(() async {
       catagoryResultList
           .add(StateCatagoryGetModel(title: catagoryPostController.text));
@@ -53,9 +57,9 @@ class CatagoryScreenController extends GetxController {
   }
 
   //...Add  Edit States Method in Controlller for calling a method in a Variables from Provider class ..//
-  void updateCatagory(String catagoryId) async {
+  void updateCatagory(String type,String imageUrl,String catagoryId) async {
     var _editCatagoryResult = await _catagoryPutProvider
-        .editCatagory(catagoryEditController.text, catagoryId)
+        .editCatagory(type,imageUrl,catagoryEditController.text, catagoryId)
         .whenComplete(() async {
       catagoryEditController.clear();
     });
@@ -67,4 +71,5 @@ class CatagoryScreenController extends GetxController {
       );
     }
   }
+
 }

@@ -56,29 +56,27 @@ class UsersScreenBody extends GetView<UserScreenController> {
                                         fontSize: 20,
                                         color: Colors.black),
                                   ),
-                                  const SizedBox(
-                                    width: 900,
-                                  ),
-                                  Expanded(
-                                    child: SizedBox(
-                                      height: 45,
-                                      child: TextFormField(
-                                        keyboardType: TextInputType.text,
-                                        maxLines: 1,
-                                        decoration: InputDecoration(
-                                            hintText: 'search here',
-                                            hintMaxLines: 1,
-                                            border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              borderSide:
-                                                  const BorderSide(width: 4.0),
-                                            ),
-                                            suffixIcon:
-                                                const Icon(Icons.search)),
-                                      ),
+                                  Spacer(),
+                                  SizedBox(
+                                    height: 45,
+                                    width: 300,
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.text,
+                                      maxLines: 1,
+                                      decoration: InputDecoration(
+                                          hintText: 'search here',
+                                          hintMaxLines: 1,
+                                          border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            borderSide:
+                                                const BorderSide(width: 4.0),
+                                          ),
+                                          suffixIcon:
+                                              const Icon(Icons.search)),
                                     ),
                                   ),
+                                  Spacer(),
                                   ButtonWidget(
                                       title: 'Add New Users',
                                       onTap: () {
@@ -94,7 +92,7 @@ class UsersScreenBody extends GetView<UserScreenController> {
                             const SizedBox(
                               height: 50,
                             ),
-                            const AdminPanelUser(adminUserId: ''
+                            const AdminPanelUser(adminUserId: 'ayan.edu.pk12@gmail.com'
                                 //  controller
                                 //     .adminUserResultList[index].adminUserId
                                 //     .toString(),
@@ -114,12 +112,12 @@ class UsersScreenBody extends GetView<UserScreenController> {
                                         fontSize: 20,
                                         color: Colors.black),
                                   ),
-                                  const Spacer(
-                                    flex: 5,
-                                  ),
-                                  Expanded(
+                                  const Spacer(),
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 20.0),
                                     child: SizedBox(
                                       height: 45,
+                                      width: 250,
                                       child: TextFormField(
                                         keyboardType: TextInputType.text,
                                         maxLines: 1,

@@ -24,46 +24,48 @@ class AppUsers extends GetView<UserScreenController> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, right: 50, top: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      'ID',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 100,
-                    ),
-                    Text(
-                      'Name',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 200,
-                    ),
-                    Text(
-                      'Email',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 235,
-                    ),
-                    Text(
-                      'State',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 380,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 140),
-                      child: Text(
-                        'Action',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                padding: const EdgeInsets.only(left: 15, right: 50, top: 15),
+                child: SizedBox(
+                  width: Get.width,
+                  child: Row(
+                    children:[
+                      SizedBox(
+                        width: Get.width*0.1,
+                        child: Text(
+                          'ID',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        width: Get.width*0.2,
+                        child: Text(
+                          'Name',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Get.width*0.14,
+                        child: Text(
+                          'Email',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Get.width*0.16,
+                        child: Text(
+                          'State',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        width: Get.width*0.1,
+                        child: Text(
+                          'Action',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const Divider(),
@@ -73,66 +75,63 @@ class AppUsers extends GetView<UserScreenController> {
                   return ListView.builder(
                       shrinkWrap: true,
                       itemCount: controller.appUserResultList.length,
+                      // itemCount: 1,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: const EdgeInsets.only(
-                              left: 20, right: 60, top: 15),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                '${index}',
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              const SizedBox(
-                                width: 150,
+                            children:[
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: SizedBox(
+                                  width: Get.width*0.06,
+                                  child: Text(
+                                    '${index}',
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
                               ),
                               SizedBox(
-                                width: 100,
+                                width: Get.width*0.18,
                                 child: Text(
                                   controller.appUserResultList[index].name
                                       .toString(),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 170,
-                              ),
                               SizedBox(
-                                width: 150,
+                                width: Get.width*0.14,
                                 child: Text(
                                   controller.appUserResultList[index].email
                                       .toString(),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 200,
-                              ),
                               SizedBox(
-                                width: 100,
+                                width: Get.width*0.16,
                                 child: Text(
                                   controller.appUserResultList[index].phone
                                       .toString(),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 330,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 80),
+                              SizedBox(
+                                width: Get.width*0.1,
                                 child: SizedBox(
                                   width: 140,
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           backgroundColor:
-                                              bottomImageSelectedColor),
+                                          bottomImageSelectedColor),
                                       onPressed: () {
                                         Get.find<GlobalController>()
                                             .AppUsersDeatilsDailogBox(
-                                                'Users Details', 'Close');
+                                            'Users Details', 'Close');
                                       },
                                       child: const Text('Action')),
                                 ),
+                              ),
+                              SizedBox(
+                                width: Get.width*0.008,
                               )
                             ],
                           ),

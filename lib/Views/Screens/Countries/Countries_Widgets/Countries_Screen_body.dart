@@ -12,7 +12,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import '../../../../Core/Global_Controller/Global_controller.dart';
 
 class CountryScreenBody extends GetView<CountryScreenController> {
-  const CountryScreenBody({super.key});
+  CountryScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,17 +78,25 @@ class CountryScreenBody extends GetView<CountryScreenController> {
                                       ),
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      StatesScreen(
-                                                        countryId: controller
-                                                            .countriesResultList[
-                                                                index]
-                                                            .cId
-                                                            .toString(),
-                                                      )));
+                                          controller.contryScreenPath.add(StatesScreen(
+                                            countryId: controller
+                                                .countriesResultList[
+                                            index]
+                                                .cId
+                                                .toString(),
+                                          ));
+                                          controller.update();
+                                          // Navigator.push(
+                                          //     context,
+                                          //     MaterialPageRoute(
+                                          //         builder: (context) =>
+                                          //             StatesScreen(
+                                          //               countryId: controller
+                                          //                   .countriesResultList[
+                                          //                       index]
+                                          //                   .cId
+                                          //                   .toString(),
+                                          //             )));
                                         },
                                         child: CountriesComponents(
                                           image: 'assets/startpage/37.png',

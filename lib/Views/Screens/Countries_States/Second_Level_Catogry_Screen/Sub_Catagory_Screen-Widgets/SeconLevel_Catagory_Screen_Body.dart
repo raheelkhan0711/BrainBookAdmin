@@ -2,22 +2,22 @@
 
 import 'package:brain_book_admin/Core/Global_Controller/Global_controller.dart';
 import 'package:brain_book_admin/Core/App-Utils/ElivatedButton/elevated_button.dart';
-import 'package:brain_book_admin/Views/Screens/Countries/Countries_Screen_Controller.dart';
-import 'package:brain_book_admin/Views/Screens/Countries_States/Second_Level_Catogry_Screen/Sub_Catagory_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Second_Level_Catogry_Screen/Sub_Catagory_Screen_Controller.dart';
+import 'package:brain_book_admin/Views/Screens/Countries_States/Third_Level_Catogry_Screen/ThirsSub_Catagory_Screen.dart';
 import 'package:brain_book_admin/Views/Screens/Dashboard_Home/Dashboard_home_widgets/dashboard_home_components.dart';
 import 'package:brain_book_admin/Views/Screens/Countries_States/Sub_Catogry_Screen/Sub_Catagory_Screen_Controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SubCatagoryScreenBody extends GetView<SubCatagoryScreenController> {
-  SubCatagoryScreenBody({
+class SecondLevelSubCatagoryScreenBody extends GetView<SecondLevelSubCatagoryScreenController> {
+  SecondLevelSubCatagoryScreenBody({
     required this.categoryId,
+    this.isThird,
     super.key,
   });
   final String categoryId;
-  final screenController= Get.find<CountryScreenController>();
+  final bool? isThird;
 
   @override
   Widget build(BuildContext context) {
@@ -159,24 +159,13 @@ class SubCatagoryScreenBody extends GetView<SubCatagoryScreenController> {
                     ),
                     itemBuilder: (context, index) => InkWell(
                         onTap: () {
-                          Get.to(SecondLevelSubCatagoryScreen(
+                          Get.to(ThirdLevelSubCatagoryScreen(
                             categoryId: controller
                                 .subCatagorySubTabResultList[index]
                                 .subCatagoryId
                                 .toString(),
                           ));
-                          // Get.put(SecondLevelSubCatagoryScreenController(controller
-                          //     .subCatagorySubTabResultList[index]
-                          //     .subCatagoryId
-                          //     .toString()));
-                          //
-                          // screenController.contryScreenPath.add(SecondLevelSubCatagoryScreen(
-                          //   categoryId: controller
-                          //       .subCatagorySubTabResultList[index]
-                          //       .subCatagoryId
-                          //       .toString(),
-                          // ));
-                          // screenController.update();
+
                         },
                         child: Container(
                           height: 100,
